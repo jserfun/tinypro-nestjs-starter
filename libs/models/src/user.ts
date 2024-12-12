@@ -26,9 +26,11 @@ export class User {
   email: string;
   @Column()
   password: string;
+
   @ManyToMany(() => Role)
   @JoinTable({ name: 'user_role' })
   role: Role[];
+
   @Column({ nullable: true })
   department: string;
   @Column({ nullable: true })
