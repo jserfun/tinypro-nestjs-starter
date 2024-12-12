@@ -1,4 +1,4 @@
-import { HttpException, Logger, Module, OnModuleInit } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import { UserModule } from './user/user.module';
 import { DbModule } from '@libs/db';
 import { PermissionModule } from './permission/permission.module';
@@ -8,17 +8,9 @@ import { AuthGuard } from './auth/auth.guard';
 import { PermissionGuard } from './permission/permission.guard';
 import { RoleModule } from './role/role.module';
 import { join } from 'path';
-import { existsSync, readFileSync, writeFileSync, mkdirSync } from 'fs';
-import { UserService } from './user/user.service';
-import { RoleService } from './role/role.service';
-import { PermissionService } from './permission/permission.service';
-import { MenuService } from './menu/menu.service';
 import { MenuModule } from './menu/menu.module';
 import { ConfigModule } from '@nestjs/config';
-import { menuData } from './menu/init/menuData';
 import { I18Module } from './i18/i18.module';
-import { I18LangService } from './i18/lang.service';
-import { I18Service } from './i18/i18.service';
 import { HeaderResolver, I18nModule } from 'nestjs-i18n';
 
 @Module({
