@@ -29,12 +29,9 @@ import { HeaderResolver, I18nModule } from 'nestjs-i18n';
       fallbackLanguage: 'enUS',
       loaderOptions: {
         path: join(__dirname, '/i18n/'),
-        // TODO: it would be unwiseful to watch dir in production env
         watch: true,
       },
       resolvers: [new HeaderResolver(['x-lang'])],
-      // TODO: what if there is only a dist folder on server ?
-      // TODO: why there is just copy dist dir in the dockerfile ?
       typesOutputPath: join(__dirname, '../src/.generate/i18n.generated.ts'),
     }),
   ],
