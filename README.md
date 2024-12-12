@@ -32,7 +32,8 @@ npm install
 10. `.env`文件中 `DATABASE_AUTOLOADENTITIES` 为 `true`
 11. `.env`文件中 `REDIS_HOST` 为 `Redis` 服务 IP
 12. `.env`文件中 `REDIS_PORT` 为 `Redis` 服务端口号
-13. 依赖安装完成
+13. `.env`文件中 `REDIS_PASS` 为 `Redis` 的密码
+14. 依赖安装完成
 
 ### Docker启动
 

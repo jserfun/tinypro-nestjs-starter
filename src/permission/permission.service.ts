@@ -2,7 +2,7 @@ import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { CreatePermissionDto } from './dto/create-permission.dto';
 import { UpdatePermissionDto } from './dto/update-permission.dto';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Permission } from '@app/models';
+import { Permission } from '@libs/models';
 import { Like, Repository } from 'typeorm';
 import { I18nTranslations } from '../.generate/i18n.generated';
 import { I18nContext, I18nService } from 'nestjs-i18n';

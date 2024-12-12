@@ -5,7 +5,7 @@ import { PaginationQueryDto } from './dto/pagination-query.dto';
 import { UpdatePwdAdminDto } from './dto/update-pwd-admin.dto';
 import { UpdatePwdUserDto } from './dto/update-pwd-user.dto';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Role, User } from '@app/models';
+import { Role, User } from '@libs/models';
 import { In, Like, Repository } from 'typeorm';
 import * as crypto from 'crypto';
 import { AuthService } from '../auth/auth.service';

@@ -2,7 +2,7 @@ import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { CreateI18Dto } from './dto/create-i18.dto';
 import { UpdateI18Dto } from './dto/update-i18.dto';
 import { InjectRepository } from '@nestjs/typeorm';
-import { I18, Lang } from '@app/models';
+import { I18, Lang } from '@libs/models';
 import { In, Like, Repository } from 'typeorm';
 import { paginate } from 'nestjs-typeorm-paginate';
 import { I18nTranslations } from '../.generate/i18n.generated';

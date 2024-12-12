@@ -3,14 +3,14 @@
   "collection": "@nestjs/schematics",
   "sourceRoot": "src",
   "compilerOptions": {
-    "deleteOutDir": false,
+    "deleteOutDir": true,
     "webpack": true,
     "assets": [
       { "include": "i18n/**/*", "watchAssets": true }
     ]
   },
   "projects": {
-    "db": {
+    "@libs/db": {
       "type": "library",
       "root": "libs/db",
       "entryFile": "index",
@@ -19,13 +19,22 @@
         "tsConfigPath": "libs/db/tsconfig.lib.json"
       }
     },
-    "models": {
+    "@libs/models": {
       "type": "library",
       "root": "libs/models",
       "entryFile": "index",
       "sourceRoot": "libs/models/src",
       "compilerOptions": {
         "tsConfigPath": "libs/models/tsconfig.lib.json"
+      }
+    },
+    "@libs/redis": {
+      "type": "library",
+      "root": "libs/redis",
+      "entryFile": "index",
+      "sourceRoot": "libs/redis/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/redis/tsconfig.lib.json"
       }
     }
   }

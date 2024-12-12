@@ -13,17 +13,23 @@
     "incremental": true,
     "skipLibCheck": true,
     "paths": {
-      "@app/db": [
+      "@libs/db": [
         "libs/db/src"
       ],
-      "@app/db/*": [
+      "@libs/db/*": [
         "libs/db/src/*"
       ],
-      "@app/models": [
+      "@libs/models": [
         "libs/models/src"
       ],
-      "@app/models/*": [
+      "@libs/models/*": [
         "libs/models/src/*"
+      ],
+      "@libs/redis": [
+        "libs/redis/src"
+      ],
+      "@libs/redis/*": [
+        "libs/redis/src/*"
       ]
     }
   },

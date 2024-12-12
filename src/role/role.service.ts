@@ -2,7 +2,7 @@ import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { CreateRoleDto } from './dto/create-role.dto';
 import { UpdateRoleDto } from './dto/update-role.dto';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Menu, Permission, Role, User } from '@app/models';
+import { Menu, Permission, Role, User } from '@libs/models';
 import { In, Like, Repository } from 'typeorm';
 import { convertToTree } from '../menu/menu.service';
 import { I18nContext, I18nService } from 'nestjs-i18n';

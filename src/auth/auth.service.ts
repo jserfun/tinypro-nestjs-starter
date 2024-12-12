@@ -1,10 +1,10 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { CreateAuthDto } from './dto/create-auth.dto';
 import { InjectRepository } from '@nestjs/typeorm';
-import { encry, User } from '@app/models';
+import { encry, User } from '@libs/models';
 import { Repository } from 'typeorm';
 import { JwtService } from '@nestjs/jwt';
-import { RedisService } from '../../libs/redis/redis.service';
+import { RedisService } from '@libs/redis/redis.service';
 import { I18nTranslations } from '../.generate/i18n.generated';
 import { I18nContext, I18nService } from 'nestjs-i18n';
 

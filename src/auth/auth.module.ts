@@ -2,11 +2,11 @@ import { Module } from '@nestjs/common';
 import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { User } from '@app/models';
+import { User } from '@libs/models';
 import { JwtModule } from '@nestjs/jwt';
 import { UserModule } from '../user/user.module';
-import { RedisService } from '../../libs/redis/redis.service';
-import { RedisModule } from '../../libs/redis/redis.module';
+import { RedisService } from '@libs/redis/redis.service';
+import { RedisModule } from '@libs/redis/redis.module';
 
 @Module({
   controllers: [AuthController],
