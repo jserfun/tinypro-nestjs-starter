@@ -5,6 +5,8 @@ import { I18nValidationExceptionFilter, I18nValidationPipe } from 'nestjs-i18n';
 
 dotenv.config({ path: '.env' });
 
+declare const module: any;
+
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.useGlobalPipes(new I18nValidationPipe());
@@ -21,5 +23,11 @@ async function bootstrap() {
   );
   await app.listen(3000);
   console.log(`Application is running on: ${await app.getUrl()}`);
+
+  if (module.hot) {
+    module.hot.accept();
+    module.hot.dispose(() => app.close());
+  }
 }
+
 bootstrap();
