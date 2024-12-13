@@ -6,7 +6,11 @@ dist-ssr
 *debug.log
 *.idea
 
+coverage
+
+# TODO: whether to ignore
+# .generate
+
 .env
 .env*
 !.env.example
-

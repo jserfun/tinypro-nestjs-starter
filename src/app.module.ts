@@ -12,8 +12,11 @@ import { MenuModule } from './menu/menu.module';
 import { ConfigModule } from '@nestjs/config';
 import { I18Module } from './i18/i18.module';
 import { HeaderResolver, I18nModule } from 'nestjs-i18n';
+import { AppController } from './app.controller';
+import { AppService } from './app.service';
 
 @Module({
+  controllers: [AppController],
   imports: [
     DbModule,
     UserModule,
@@ -44,6 +47,7 @@ import { HeaderResolver, I18nModule } from 'nestjs-i18n';
       provide: APP_GUARD,
       useClass: PermissionGuard,
     },
+    AppService,
   ],
 })
 export class AppModule {}

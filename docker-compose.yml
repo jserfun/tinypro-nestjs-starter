@@ -1,25 +1,41 @@
 version: "3"
 services:
   mysql:
-    image: mysql:8
+    image: mysql:8.0.28
     restart: always
     environment:
-      MYSQL_ROOT_PASSWORD: "123456"
-      MYSQL_DATABASE: tiny_pro
-      MYSQL_USER: tiny_pro
-      MYSQL_PASSWORD: "123456"
+      MYSQL_ROOT_PASSWORD: "${DATABASE_ROOT_PASSWORD}"
+      MYSQL_DATABASE: "${DATABASE_NAME}"
+      MYSQL_USER: "${DATABASE_USERNAME}"
+      MYSQL_PASSWORD: "${DATABASE_PASSWORD}"
     ports:
       - 3306:3306
+
   redis:
     image: redis
+    entrypoint: ["redis-server", "/etc/redis.conf", "--requirepass", "${REDIS_PASS}"]
     ports:
       - 6379:6379
-  back:
+
+  app:
     build:
       context: .
       dockerfile: dockerfile
-    env_file:
-      - .env
+      args:
+        DATABASE_HOST: "${DATABASE_HOST}"
+        DATABASE_PORT: "${DATABASE_PORT}"
+        DATABASE_PASSWORD: "${DATABASE_PASSWORD}"
+        DATABASE_USERNAME: "${DATABASE_USERNAME}"
+        DATABASE_SYNCHRONIZE: "${DATABASE_SYNCHRONIZE}"
+        DATABASE_AUTOLOADENTITIES: "${DATABASE_AUTOLOADENTITIES}"
+        AUTH_SECRET: "${AUTH_SECRET}"
+        REDIS_SECONDS: "${REDIS_SECONDS}"
+        REDIS_HOST: "${REDIS_HOST}"
+        REDIS_PORT: "${REDIS_PORT}"
+        REDIS_PASS: "${REDIS_PASS}"
+        EXPIRES_IN: "${EXPIRES_IN}"
+        PAGINATION_PAGE: "${PAGINATION_PAGE}"
+        PAGINATION_LIMIT: "${PAGINATION_LIMIT}"
     ports:
       - 3000:3000
     depends_on:
